@@ -1,0 +1,14 @@
+# Headers de segurança (equivalentes aos que estavam em next.config.mjs)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Página de erro 404 customizada (gerada pelo Next.js export)
+ErrorDocument 404 /404.html
+
+# Garante que arquivos .html sejam servidos corretamente
+<IfModule mod_mime.c>
+  AddType text/html .html
+</IfModule>
